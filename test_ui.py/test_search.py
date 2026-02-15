@@ -11,4 +11,4 @@ class TestSearchFunctionality:
         driver.get(" https://www.chitai-gorod.ru/")
         main_page.search_book("Мастер и Маргарита")
         # Проверка, что результаты содержат искомую книгу
-        assert "Мастер и Маргарита" in driver.page_source
+        assert main_page.page_source_contains("Мастер и Маргарита")

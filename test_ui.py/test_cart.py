@@ -18,7 +18,7 @@ class TestCartFunctionality:
         main_page.open_first_result()
         product_page.add_to_cart()
         # Проверка, что товар добавлен (например, через всплывающее сообщение или переход в корзину)
-        assert "Товар добавлен" in driver.page_source or cart_page.get_items_count() == 1
+        assert product_page.page_source_contains("Товар добавлен") or cart_page.get_items_count() == 1
 
     @pytest.mark.ui
     def test_update_quantity_in_cart(self, driver):

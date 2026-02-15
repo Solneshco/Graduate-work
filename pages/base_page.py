@@ -15,3 +15,6 @@ class BasePage:
 
     def find_elements(self, locator):
         return self.wait.until(EC.presence_of_all_elements_located(locator))
+
+    def page_source_contains(self, text):
+        return text in self.driver.page_source
